@@ -1,13 +1,8 @@
-# ATech Training Production Management Application
+# Production Management Application
 
 ## Overview
 - Version: 1.11.0
-- The ATech Training Production Management Application is an internal software developed to allow our production and fabrication teams to view documentation and record notes with ease.
-
-## Official Documentation
-- User/Operation Manuals can be located on Microsoft Teams in the Production Management App channel under R&D Team
-  - GUIDE_CURRENT.docx or GUIDE_CURRENT.pdf reflects the current state of the application
-  - GUIDE_ALL_FUNCTIONALITY.docx or GUIDE_ALL_FUNCTIONALITY.pdf reflects the archived state of the application for reimplementation
+- The Production Management Application is a software developed to allow teams to view documentation and record notes with ease.
 
 ## Table of Contents
 1. [Device Requirements](#device-requirements)
@@ -20,7 +15,6 @@
 8. [Thumbnail Naming Convention](#documentation-naming-convention)
 9. [HTTP Server](#serverpy)
 10. [Credits](#credits)
-11. [License](#license)
 
 ## Device Requirements
 - Android OS Version:
@@ -82,7 +76,7 @@
 ## TeamsAPI/Workflow
 - If a note/record is raised as an "issue", a Microsoft Teams workflow is automatically called immediately.
   - Upon a user saving a record that had the "issue" toggled on, the application will create a JSON formatted message that is sent to Microsoft Teams
-  - Upon receiving the message, Teams will display the message in the R&D Team -> Production Management App Alerts channel.
+  - Upon receiving the message, Teams will display the message.
 
 ## Documentation Naming Convention
 - The dropdown filtering functionality of the dashboard/manuals page utilizes the first set of characters up until the first space of a pdf name, known as a "prefix"
@@ -103,9 +97,5 @@
 - Depending on the computer that is running the HTTP server, you will need to change every instance of ```val url = URL("http://10.2.23.xxx:1025/list")``` to the correct IP address of the host computer with port 1025
 
 ## Credits
-- Developed by the ATech Training R&D Team:
+- Developed by:
   - Andrew T. Pipo (2023 - 2024)
-  - Tim Robbins (2024 - )
-
-## LICENSE
-- No License. This is an internal software not intended to be used outside of ATech's network.

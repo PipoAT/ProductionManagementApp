@@ -25,7 +25,7 @@ class TeamsAPI {
      * or sends a 6-digit code to Microsoft Teams
      */
     fun send(note: Note, trainer: String, page: String) {
-        val teamsWebhookUrl = "https://prod-100.westus.logic.azure.com:443/workflows/2fa95a41970341879c89001557853861/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=zlieAyFrzyiPpAQWtUgX6OBLSLw1VOofRFUo4pVs5ms"
+        val teamsWebhookUrl = "URL GOES HERE"
         // obtains the current date and time plus 1 week for other tasks via specified format
         val dueDate = LocalDateTime.now().plusWeeks(1)
         // generates a random 6 digit code

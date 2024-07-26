@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">ATech Training Production Management Application</string>
+    <string name="title_manuals">Manuals</string>
+    <string name="scroll_description">Scroll bar containing the dynamically added buttons for pdfs</string>
+    <string name="type_your_note_here">Type your note here</string>
+    <string name="new_note">New Note</string>
+    <string name="go_back">Close Notes</string>
+    <string name="dropdown_menu_trainers">A dropdown menu to select the trainers based on the group</string>
+    <plurals name="character_count">
+        <item quantity="one">%1$d / %2$d characters</item>
+        <item quantity="other">%1$d / %2$d characters</item>
+    </plurals>
+    <string name="page_count">%1$d / %2$d</string>
+    <string name="notes">Notes</string>
+    <string name="raise_as_issue">Raise as Issue</string>
+    <string name="photo_display">Display photo that was taken by user</string>
+    <string name="close_button_for_dialog">Close Dialog</string>
+    <string name="forward_arrow">Forward Arrow</string>
+    <string name="back_arrow">Back Arrow</string>
+    <string name="page">Page #</string>
+    <string name="search">Search</string>
+    <string name="notes_dialog">Notes Dialog</string>
+    <string name="user">User</string>
+    <string name="indicator">Indicator</string>
+    <string name="document">Document</string>
+    <string name="images_of_trainers">Images of Trainers</string>
+    <string name="note_last_updated">Note Last Updated: </string>
+    <string name="type_your_name_here">Type your name here</string>
+    <string name="error_no_documents_found">Error: No Documents Found</string>
+</resources>

@@ -1,0 +1,50 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <!-- Username TextView -->
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:id="@+id/note_username"
+        android:textColor="@color/black"
+        android:padding="5dp"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceListItemSmall" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@color/black"
+        android:id="@+id/note_icons"
+        android:padding="5dp"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceListItemSmall" />
+
+    <!-- Note Content TextView -->
+    <TextView
+        android:layout_width="0dp"
+        android:id="@+id/note_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:padding="5dp"
+        android:textAppearance="?android:attr/textAppearanceListItemSmall" />
+
+    <!-- Trainer Name TextView -->
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:id="@+id/note_trainer"
+        android:textColor="@color/black"
+        android:padding="5dp"
+        android:textAppearance="?android:attr/textAppearanceListItemSmall" />
+</LinearLayout>

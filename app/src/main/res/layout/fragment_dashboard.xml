@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.atech.atechtrainingproductionmanualviewer.ui.dashboard.DashboardFragment">
+
+    <LinearLayout
+        android:id="@+id/spinnerLayout"
+        android:layout_width="750dp"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_margin="16dp"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    <Spinner
+        android:id="@+id/dropdown"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:contentDescription="@string/dropdown_menu_trainers"
+        android:dropDownVerticalOffset="45dp"
+        android:textSize="18sp"
+        android:layout_gravity="center"
+        android:spinnerMode="dialog"
+        app:layout_constraintWidth_max="0dp"
+        android:layout_weight="1" />
+
+    <EditText
+        android:id="@+id/searchBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="@string/search"
+        android:layout_gravity="center"
+        android:background="@color/white"
+        android:inputType="text"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        app:layout_constraintWidth_max="0dp"
+        app:layout_constraintWidth_default="wrap"
+        android:layout_weight="1"
+        android:autofillHints="Search By Trainer"/>
+
+    </LinearLayout>
+
+
+    <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/rounded_background"
+            android:contentDescription="@string/scroll_description"
+            android:fadeScrollbars="false"
+            android:fillViewport="true"
+            android:padding="10dp"
+            android:scrollIndicators="right"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:scrollbarStyle="insideOverlay"
+            android:scrollbarThumbVertical="@color/ATechRed"
+            app:layout_constraintTop_toBottomOf="@id/spinnerLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:id="@+id/cardContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:textAlignment="center" >
+
+            <!-- Add your views here -->
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

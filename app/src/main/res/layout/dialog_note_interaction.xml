@@ -1,0 +1,201 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:padding="16dp"
+    tools:ignore="Overdraw">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:textColor="@color/black"
+            android:paddingBottom="10dp"
+            android:text="@string/notes_dialog"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <ImageButton
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:background="@color/white"
+            android:src="@drawable/close_x_icon"
+            android:contentDescription="@string/close_button_for_dialog" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/image_uri_imageview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/photo_display" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/image_comment"
+            android:layout_width="488dp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:hint="@string/type_your_note_here"
+            android:background="@color/white"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:autofillHints="Insert comment associated with image"
+            android:inputType="text"
+            android:maxLines="1" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/black" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/counter_textview"
+        android:layout_width="wrap_content"
+        android:layout_gravity="end"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/black"
+        android:text="@plurals/character_count"
+        android:background="@color/white"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/custom_dialog_alert_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:text="@string/raise_as_issue"
+            android:textColor="@color/black" />
+
+
+        <EditText
+            android:id="@+id/username_textview"
+            android:layout_width="251dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:autofillHints="Insert comment associated with image"
+            android:background="@color/white"
+            android:hint="@string/type_your_name_here"
+            android:inputType="text"
+            android:maxLines="1"
+            android:padding="16dp"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/black" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:id="@+id/date_update_textview"
+            android:layout_width="wrap_content"
+            android:layout_gravity="end"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/black"
+            android:text="@string/note_last_updated"
+            android:background="@color/white"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/date_textview"
+            android:layout_width="wrap_content"
+            android:layout_gravity="end"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/black"
+            android:background="@color/white"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
+
+        <!-- First Spinner -->
+        <Spinner
+            android:id="@+id/dropdown_trainer"
+            android:layout_width="172dp"
+            android:layout_height="48dp"
+            android:layout_weight="2"
+            android:background="@android:drawable/btn_dropdown"
+            android:contentDescription="@string/dropdown_menu_trainers"
+            android:dropDownWidth="wrap_content"
+            android:dropDownVerticalOffset="45dp"
+            android:gravity="center"
+            android:spinnerMode="dialog"
+            android:textSize="25sp" />
+
+        <!-- Second Spinner -->
+        <EditText
+            android:id="@+id/dropdown_pages"
+            android:layout_width="59dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="3dp"
+            android:layout_weight="1"
+            android:autofillHints="Page #"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:background="@android:drawable/editbox_background_normal"
+            android:gravity="center"
+            android:hint="@string/page"
+            android:inputType="number"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/maxPageDisplay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,37 @@
+<project version="4">
+  <component name="EntryPointsManager">
+    <pattern value="com.example.atechtrainingproductionmanualviewer.DatabaseDbHelper" method="saveCommentForImage" />
+    <pattern value="com.example.atechtrainingproductionmanualviewer.TeamsAPI" method="publishForgotPassAlert" />
+    <pattern value="com.example.atechtrainingproductionmanualviewer.TeamsAPI" method="publishNoteToTeamsChannel" />
+    <pattern value="com.example.atechtrainingproductionmanualviewer.TeamsAPI" />
+    <pattern value="com.example.atechtrainingproductionmanualviewer.TeamsAPI" method="TeamsAPI" />
+    <pattern value="com.example.atechtrainingproductionmanualviewer.Note" />
+    <pattern value="com.example.atechtrainingproductionmanualviewer.Note" method="Note" />
+    <pattern value="com.example.atechtrainingproductionmanualviewer.MainActivity" />
+    <pattern value="com.example.atechtrainingproductionmanualviewer.MainActivity" method="updateMenuVisibility" />
+    <pattern value="com.example.atechtrainingproductionmanualviewer.ForgotPassAlert" />
+    <pattern value="com.example.atechtrainingproductionmanualviewer.ForgotPassAlert" method="ForgotPassAlert" />
+    <pattern value="com.example.atechtrainingproductionmanualviewer.ui.dashboard.DashboardFragment" />
+    <pattern value="com.example.atechtrainingproductionmanualviewer.ui.dashboard.DashboardFragment" method="updateCardContainer" />
+    <pattern value="com.example.atechtrainingproductionmanualviewer.ui.login.LoginFragment" method="populateUserSpinner" />
+    <pattern value="com.example.atechtrainingproductionmanualviewer.ui.login.LoginFragment" method="updateMenuVisibility" />
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="JavadocGenerationManager">
+    <option name="OUTPUT_DIRECTORY" value="T:/APIPO/Dev/Project Documentation/ATech Training Production Management Viewer" />
+    <option name="OPTION_INCLUDE_LIBS" value="true" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.67" />
+      </ProjectState>
+    </option>
+  </component>
+</project>

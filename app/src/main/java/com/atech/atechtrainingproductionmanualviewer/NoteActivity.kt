@@ -28,6 +28,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
+import com.atech.atechtrainingproductionmanualviewer.BuildConfig
 import com.atech.atechtrainingproductionmanualviewer.DatabaseDbHelper.NotesTable
 import com.atech.atechtrainingproductionmanualviewer.MainActivity.IDM.darkModeBtn
 import com.atech.atechtrainingproductionmanualviewer.MainActivity.IDM.isDarkMode
@@ -447,7 +448,7 @@ class NoteActivity : AppCompatActivity() {
         lifecycleScope.launch {
             try {
                 // create a URL object with the server's address
-                val url = URL("http://10.2.23.104:1025/list")
+                val url = URL("${BuildConfig.SERVER_BASE_URL}/list")
 
                 // get the list of files from the server
                 val files: List<String> = withContext(Dispatchers.IO) {
@@ -491,7 +492,7 @@ class NoteActivity : AppCompatActivity() {
                         lifecycleScope.launch {
                             try {
                                 // download the PDF file from the server
-                                val pdfUrl = URL("http://10.2.23.104:1025/$selectedTrainer")
+                                val pdfUrl = URL("${BuildConfig.SERVER_BASE_URL}/$selectedTrainer")
                                 val pdfFile = File(context.getExternalFilesDir(null), selectedTrainer)
                                 withContext(Dispatchers.IO) {
                                     pdfFile.outputStream().use { outputStream ->

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Allow cleartext traffic only for specific domains during development -->
+    <!-- IMPORTANT: Replace these example domains with your actual server addresses -->
+    <domain-config cleartextTrafficPermitted="true">
+        <!-- Add your local server IP addresses here -->
+        <domain includeSubdomains="false">YOUR_SERVER_IP</domain>
+        <domain includeSubdomains="false">localhost</domain>
+        <domain includeSubdomains="false">127.0.0.1</domain>
+    </domain-config>
+    
+    <!-- Default configuration for all other domains: require HTTPS -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

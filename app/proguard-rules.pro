@@ -13,27 +13,27 @@
 # hide the original source file name.
 -renamesourcefileattribute SourceFile
 
-# Keep data classes
+# Keep data classes used with GSON serialization
 -keep class com.atech.atechtrainingproductionmanualviewer.Note { *; }
 -keepclassmembers class com.atech.atechtrainingproductionmanualviewer.** {
     public <init>(...);
 }
 
-# GSON
+# GSON - Only keep essentials for reflection
 -keepattributes Signature
 -keepattributes *Annotation*
 -dontwarn sun.misc.**
--keep class com.google.gson.** { *; }
+# Keep generic signature of TypeToken
+-keep class com.google.gson.reflect.TypeToken { *; }
+# Keep model classes used with GSON (add specific classes as needed)
 -keep class * implements com.google.gson.TypeAdapter
 -keep class * implements com.google.gson.TypeAdapterFactory
 -keep class * implements com.google.gson.JsonSerializer
 -keep class * implements com.google.gson.JsonDeserializer
 
-# OkHttp & Retrofit
+# OkHttp & Retrofit - Use library's own consumer rules, only add if needed
 -dontwarn okhttp3.**
 -dontwarn retrofit2.**
--keep class okhttp3.** { *; }
--keep class retrofit2.** { *; }
 -keepattributes Signature
 -keepattributes Exceptions
 
@@ -49,14 +49,7 @@
     volatile <fields>;
 }
 
-# Keep AndroidX & Material components
--keep class com.google.android.material.** { *; }
--keep class androidx.** { *; }
--keep interface androidx.** { *; }
--dontwarn com.google.android.material.**
--dontnote com.google.android.material.**
-
-# Keep ViewBinding classes
+# ViewBinding - Keep binding classes
 -keep class * implements androidx.viewbinding.ViewBinding {
     public static *** bind(android.view.View);
     public static *** inflate(android.view.LayoutInflater);

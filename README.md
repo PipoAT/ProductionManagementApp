@@ -56,7 +56,7 @@
   - Permission to access internet via wifi or internal network
   - ~~Permission to access Microsoft Teams~~ (temporarily disabled in v2.0)
 - **Device Settings (Optional):**
-  - Orientation/Auto-rotation preferable to be locked
+  - Orientation/Auto-rotation preferably to be locked
   - Taskbar settings adjusted preferably to be minimal buttons only
 
 ## Adobe Acrobat Reader (REQUIRED)
@@ -65,7 +65,7 @@
   - Locate "Adobe Acrobat Reader: Edit PDF" and install the app
   - Launch the app to bypass login and to ensure the application is working as intended
 - On first launch of the ATech Training Production Management App, and on first click of any document to open:
-  - Select the Adobe Acrobat App when the popup appears and select "Always" to ensure Adobe launches everytime
+  - Select the Adobe Acrobat App when the popup appears and select "Always" to ensure Adobe launches every time
   - Within Adobe, clicking on the triple dots -> pages -> contents will access bookmarks within Adobe
 
 ## Configuration

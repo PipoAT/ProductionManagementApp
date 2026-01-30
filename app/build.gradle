@@ -22,17 +22,14 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         
-        // Configurable server endpoint
-        buildConfigField "String", "SERVER_BASE_URL", "\"http://10.2.23.104:1025\""
+        // Configurable server endpoint - CHANGE THIS TO YOUR SERVER IP/HOSTNAME
+        buildConfigField "String", "SERVER_BASE_URL", "\"http://YOUR_SERVER_IP:1025\""
     }
 
     buildTypes {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-        debug {
-            buildConfigField "String", "SERVER_BASE_URL", "\"http://10.2.23.104:1025\""
         }
     }
     compileOptions {

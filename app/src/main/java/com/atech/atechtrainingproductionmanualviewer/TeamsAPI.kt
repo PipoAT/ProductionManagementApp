@@ -1,9 +1,9 @@
 package com.atech.atechtrainingproductionmanualviewer
 
 import com.google.gson.Gson
-import kotlinx.coroutines.DelicateCoroutinesApi
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.OkHttpClient
@@ -14,60 +14,28 @@ import java.time.LocalDateTime
 data class Note(val title: String, val content: String)
 
 
-// TODO: THE TEAMS API WILL NOT WORK AS OF AUG. 15 2024 DUE TO RETIREMENT OF THE NEEDED MICROSOFT TEAMS FUNCTIONALITY.
-//  PLEASE FIX SO THAT IT IS NOT TIED TO APIPO@ATECHTRAINING.COM AND THAT IT ACTUALLY SENDS THE BELOW DATA.
-//  THE CURRENT URL IS TIED TO A WORKFLOW THAT ONLY SENDS A GENERAL MESSAGE
-// https://learn.microsoft.com/en-us/power-automate/?utm_source=flow-sidebar&utm_medium=web
+// TODO: THE TEAMS API FUNCTIONALITY HAS BEEN DEPRECATED AS OF AUG. 15 2024.
+//  THIS VERSION 2.0 REMOVES THE TEAMS INTEGRATION TEMPORARILY.
+//  TO RE-ENABLE, IMPLEMENT MICROSOFT GRAPH API WITH OAUTH2 AUTHENTICATION.
+//  See: https://learn.microsoft.com/en-us/graph/api/channel-post-messages
 class TeamsAPI {
-    @DelicateCoroutinesApi
+    // Use application-scoped coroutine context instead of deprecated GlobalScope
+    private val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
+    
     /**
-     * Sends the specified message/associated information [note], [trainer], [page] to Microsoft Teams
-     * or sends a 6-digit code to Microsoft Teams
+     * [DEPRECATED] Sends the specified message/associated information [note], [trainer], [page] to Microsoft Teams
+     * This function is non-functional as of August 15, 2024 due to Microsoft Teams Workflow retirement.
+     * 
+     * For v2.0, this method logs the attempt but does not send to Teams.
+     * To restore functionality, implement Microsoft Graph API integration.
      */
+    @Deprecated("Microsoft Teams Workflow API retired. Use Microsoft Graph API instead.")
     fun send(note: Note, trainer: String, page: String) {
-        val teamsWebhookUrl = "URL GOES HERE"
-        // obtains the current date and time plus 1 week for other tasks via specified format
-        val dueDate = LocalDateTime.now().plusWeeks(1)
-        // generates a random 6 digit code
-        GlobalScope.launch(Dispatchers.IO) {
-            // creates the message format/adds information into message format to send
-            val messageCardNew = mapOf(
-                "type" to "message",
-                "attachments" to listOf(
-                    mapOf(
-                        "contentType" to "application/vnd.microsoft.card.adaptive",
-                        "contentUrl" to null,
-                        "content" to mapOf(
-                            "\$schema" to "http://adaptivecards.io/schemas/adaptive-card.json",
-                            "type" to "AdaptiveCard",
-                            "version" to "1.2",
-                            "body" to listOf(
-                                mapOf(
-                                    "type" to "TextBlock",
-                                    "text" to "${note.title} ${note.content}"
-                                ),
-                                mapOf(
-                                    "type" to "FactSet",
-                                    "facts" to listOf(
-                                        mapOf("title" to "Trainer/Document", "value" to trainer),
-                                        mapOf("title" to "Page Number", "value" to page),
-                                        mapOf("title" to "Due Date", "value" to dueDate)
-                                    )
-                                )
-                            )
-                        )
-                    )
-                )
-            )
-
-
-            // create the request to send to Teams
-            val request = Request.Builder().url(teamsWebhookUrl).post(Gson().toJson(messageCardNew).toRequestBody("application/json; charset=utf-8".toMediaTypeOrNull())).build()
-            try {
-                // check for a valid response
-                OkHttpClient().newCall(request).execute()
-                // error message to post onto app if all fails
-            } catch (e: Exception) { println(e) }
-        }
+        // Log the note instead of sending to Teams (temporary solution for v2.0)
+        android.util.Log.i("TeamsAPI", "Note logged (Teams integration disabled): ${note.title} - ${note.content} - Trainer: $trainer, Page: $page")
+        
+        // Original Teams webhook functionality disabled
+        // TODO: Implement Microsoft Graph API to re-enable Teams integration
+        // https://learn.microsoft.com/en-us/graph/api/channel-post-messages
     }
 }

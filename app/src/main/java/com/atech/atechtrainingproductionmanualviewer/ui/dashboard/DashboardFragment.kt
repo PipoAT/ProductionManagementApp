@@ -18,6 +18,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import com.atech.atechtrainingproductionmanualviewer.BuildConfig
 import com.atech.atechtrainingproductionmanualviewer.R
 import com.atech.atechtrainingproductionmanualviewer.databinding.CardLayoutBinding
 import com.atech.atechtrainingproductionmanualviewer.databinding.FragmentDashboardBinding
@@ -43,7 +44,7 @@ class DashboardFragment : Fragment() {
             try {
                 showErrorCard()
                 // get the list of files from the server
-                val url = URL("http://10.2.23.104:1025/list")
+                val url = URL("${BuildConfig.SERVER_BASE_URL}/list")
                 val fileList: List<String> = withContext(Dispatchers.IO) {
                     val connection = url.openConnection() as HttpURLConnection
                     connection.inputStream.bufferedReader().use { it.readText() }.let { json ->
@@ -136,7 +137,7 @@ class DashboardFragment : Fragment() {
             binding.cardContainer.removeAllViews()
 
             // create a URL object with the server's address
-            val url = URL("http://10.2.23.104:1025/list")
+            val url = URL("${BuildConfig.SERVER_BASE_URL}/list")
 
             // get the list of files from the server
             val files: List<String> = withContext(Dispatchers.IO) {
@@ -170,7 +171,7 @@ class DashboardFragment : Fragment() {
                             setOnClickListener {
                                 lifecycleScope.launch {
                                     Toast.makeText(requireContext(), "Loading PDF...", Toast.LENGTH_SHORT).show()
-                                    val pdfUrl = URL("http://10.2.23.104:1025/$pdfFile")
+                                    val pdfUrl = URL("${BuildConfig.SERVER_BASE_URL}/$pdfFile")
                                     val pdfOutputFile = File(requireContext().getExternalFilesDir(null), pdfFile)
                                     withContext(Dispatchers.IO) {
                                         pdfOutputFile.outputStream().use { outputStream ->
@@ -194,7 +195,7 @@ class DashboardFragment : Fragment() {
 
                     try {
                         // create a URL object with the server's address
-                        val imageUrl = URL("http://10.2.23.104:1025/${pdfChunk.first().takeWhile { it != ' ' }}.png")
+                        val imageUrl = URL("${BuildConfig.SERVER_BASE_URL}/${pdfChunk.first().takeWhile { it != ' ' }}.png")
 
                         // download the image from the server
                         val imageFile = File(requireContext().getExternalFilesDir(null), "$pdfChunk.png")
